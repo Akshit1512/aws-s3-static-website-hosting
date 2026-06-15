@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Explorer</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#000;
+color:white;
+overflow-x:hidden;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.9);
+padding:15px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+nav h2{
+color:#ffd700;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+min-height:100vh;
+padding:100px 30px;
+}
+
+.hero{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1600') center/cover;
+}
+
+.hero h1{
+font-size:4rem;
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.2rem;
+}
+
+.btn{
+margin-top:25px;
+padding:12px 25px;
+background:#ffd700;
+color:black;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+}
+
+.about{
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.about-content{
+max-width:800px;
+}
+
+.about h2{
+font-size:3rem;
+margin-bottom:20px;
+color:#ffd700;
+}
+
+.solar{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.solar h2{
+margin-bottom:30px;
+font-size:3rem;
+color:#ffd700;
+}
+
+.solar-system{
+position:relative;
+width:700px;
+height:700px;
+}
+
+.sun{
+position:absolute;
+width:80px;
+height:80px;
+background:yellow;
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+box-shadow:0 0 50px yellow;
+}
+
+.orbit{
+position:absolute;
+border:1px solid rgba(255,255,255,0.2);
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+.planet{
+position:absolute;
+border-radius:50%;
+top:-10px;
+left:50%;
+}
+
+.mercury-orbit{width:140px;height:140px;animation:spin 5s linear infinite;}
+.venus-orbit{width:200px;height:200px;animation:spin 8s linear infinite;}
+.earth-orbit{width:270px;height:270px;animation:spin 12s linear infinite;}
+.mars-orbit{width:340px;height:340px;animation:spin 16s linear infinite;}
+.jupiter-orbit{width:430px;height:430px;animation:spin 22s linear infinite;}
+.saturn-orbit{width:520px;height:520px;animation:spin 28s linear infinite;}
+
+.mercury{width:12px;height:12px;background:gray;}
+.venus{width:18px;height:18px;background:orange;}
+.earth{width:20px;height:20px;background:deepskyblue;}
+.mars{width:16px;height:16px;background:red;}
+.jupiter{width:35px;height:35px;background:#d2b48c;}
+.saturn{width:30px;height:30px;background:#f4c27a;}
+
+@keyframes spin{
+from{
+transform:translate(-50%,-50%) rotate(0deg);
+}
+to{
+transform:translate(-50%,-50%) rotate(360deg);
+}
+}
+
+.contact{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.contact h2{
+font-size:3rem;
+color:#ffd700;
+margin-bottom:20px;
+}
+
+form{
+width:400px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,textarea{
+padding:12px;
+border:none;
+border-radius:5px;
+}
+
+button{
+padding:12px;
+background:#ffd700;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#111;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<h2>Solar Explorer</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#solar">Solar System</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<h1>Explore The Solar System</h1>
+<p>Discover planets, stars and the mysteries of space.</p>
+<a href="#solar" class="btn">Explore Now</a>
+</section>
+
+<section class="about" id="about">
+<div class="about-content">
+<h2>About Solar System</h2>
+<p>
+The Solar System consists of the Sun and eight planets:
+Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune.
+It is one of the most fascinating systems in our universe.
+</p>
+</div>
+</section>
+
+<section class="solar" id="solar">
+<h2>Solar System Animation</h2>
+
+<div class="solar-system">
+
+<div class="sun"></div>
+
+<div class="orbit mercury-orbit">
+<div class="planet mercury"></div>
+</div>
+
+<div class="orbit venus-orbit">
+<div class="planet venus"></div>
+</div>
+
+<div class="orbit earth-orbit">
+<div class="planet earth"></div>
+</div>
+
+<div class="orbit mars-orbit">
+<div class="planet mars"></div>
+</div>
+
+<div class="orbit jupiter-orbit">
+<div class="planet jupiter"></div>
+</div>
+
+<div class="orbit saturn-orbit">
+<div class="planet saturn"></div>
+</div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+<h2>Contact Us</h2>
+
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+</section>
+
+<footer>
+© 2026 Solar Explorer | Made with HTML & CSS
+</footer>
+
+</body>
+</html>
