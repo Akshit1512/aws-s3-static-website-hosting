@@ -38,3 +38,4 @@ Hosted a static website using Amazon S3 Static Website Hosting.
 ## Live Website
 
 Paste your S3 website endpoint here.
+* http://axit-static-website-2026.s3-website.eu-north-1.amazonaws.com
